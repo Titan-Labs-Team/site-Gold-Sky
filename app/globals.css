@@ -1,0 +1,104 @@
+@import 'tailwindcss';
+@import 'tw-animate-css';
+
+@custom-variant dark (&:is(.dark *));
+
+:root {
+  /* Golden Sky Brand Colors */
+  --background: #fafaf6;
+  --foreground: #1a1a1a;
+  --card: #ffffff;
+  --card-foreground: #1a1a1a;
+  --popover: #ffffff;
+  --popover-foreground: #1a1a1a;
+  --primary: #2b4a2f;
+  --primary-foreground: #fafaf6;
+  --secondary: #f0e9dc;
+  --secondary-foreground: #1a1a1a;
+  --muted: #f5f4ed;
+  --muted-foreground: #7a7a7a;
+  --accent: #c9a96e;
+  --accent-foreground: #1a1a1a;
+  --destructive: #dc2626;
+  --destructive-foreground: #fafaf6;
+  --border: #e5dbc8;
+  --input: #e5dbc8;
+  --ring: #8faf8c;
+  
+  /* Custom Brand Tokens */
+  --sage: #8faf8c;
+  --sage-light: #a8bca6;
+  --sage-dark: #6a9266;
+  --gold: #c9a96e;
+  --gold-light: #ddc494;
+  --gold-dark: #be9251;
+  --cream: #f0e9dc;
+  --cream-light: #fafaf6;
+  --cream-dark: #e5dbc8;
+  --forest: #2b4a2f;
+  --forest-light: #354a38;
+  --forest-dark: #243226;
+  --charcoal: #1a1a1a;
+  --warm-gray: #7a7a7a;
+  
+  --radius: 0.5rem;
+}
+
+@theme inline {
+  --font-sans: var(--font-inter), 'Inter', sans-serif;
+  --font-serif: var(--font-cormorant), 'Cormorant Garamond', serif;
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-charcoal: var(--charcoal);
+  --color-warm-gray: var(--warm-gray);
+  --color-sage: var(--sage);
+  --color-gold: var(--gold);
+  --color-cream: var(--cream);
+  --color-forest: var(--forest);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+  
+  /* Smooth scrolling */
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+/* Custom utility classes */
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+  
+  .text-pretty {
+    text-wrap: pretty;
+  }
+}
