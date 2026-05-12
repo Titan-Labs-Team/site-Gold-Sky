@@ -68,10 +68,59 @@
   --color-ring: var(--ring);
   --color-charcoal: var(--charcoal);
   --color-warm-gray: var(--warm-gray);
-  --color-sage: var(--sage);
-  --color-gold: var(--gold);
-  --color-cream: var(--cream);
+
+  /* Forest scale */
   --color-forest: var(--forest);
+  --color-forest-50:  #f3f6f3;
+  --color-forest-100: #e3e9e3;
+  --color-forest-200: #c7d4c8;
+  --color-forest-300: #a0b5a2;
+  --color-forest-400: #759078;
+  --color-forest-500: #547257;
+  --color-forest-600: #415b44;
+  --color-forest-700: #354a38;
+  --color-forest-800: #2b4a2f;
+  --color-forest-900: #243226;
+  --color-forest-950: #121b14;
+
+  /* Gold scale */
+  --color-gold: var(--gold);
+  --color-gold-50:  #fbf8f1;
+  --color-gold-100: #f5eedf;
+  --color-gold-200: #ebdcbe;
+  --color-gold-300: #ddc494;
+  --color-gold-400: #c9a96e;
+  --color-gold-500: #be9251;
+  --color-gold-600: #b07d43;
+  --color-gold-700: #926439;
+  --color-gold-800: #775134;
+  --color-gold-900: #61442d;
+
+  /* Cream scale */
+  --color-cream: var(--cream);
+  --color-cream-50:  #fafaf6;
+  --color-cream-100: #f5f4ed;
+  --color-cream-200: #f0e9dc;
+  --color-cream-300: #e5dbc8;
+  --color-cream-400: #d4c4a8;
+  --color-cream-500: #c4ae8c;
+  --color-cream-600: #b19672;
+  --color-cream-700: #967c5d;
+  --color-cream-800: #7a664f;
+  --color-cream-900: #655542;
+
+  /* Sage scale */
+  --color-sage: var(--sage);
+  --color-sage-50:  #f4f7f4;
+  --color-sage-100: #e6ebe5;
+  --color-sage-200: #cdd8cc;
+  --color-sage-300: #a8bca6;
+  --color-sage-400: #8faf8c;
+  --color-sage-500: #6a9266;
+  --color-sage-600: #537550;
+  --color-sage-700: #435d41;
+  --color-sage-800: #384c36;
+  --color-sage-900: #2f3f2e;
   --radius-sm: calc(var(--radius) - 4px);
   --radius-md: calc(var(--radius) - 2px);
   --radius-lg: var(--radius);

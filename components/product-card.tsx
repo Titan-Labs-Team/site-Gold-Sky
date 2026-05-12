@@ -11,7 +11,6 @@ import { cn } from '@/lib/utils'
 
 interface ProductCardProps {
   product: Product
-  showAddToCart?: boolean
 }
 
 export function ProductCard({ product }: ProductCardProps) {

@@ -1,183 +1,190 @@
-import Link from 'next/link'
-import { MapPin, Phone, Mail, Instagram, Facebook } from 'lucide-react'
+'use client'
 
-const footerLinks = {
-  institucional: [
-    { name: 'Sobre Nós', href: '/sobre' },
-    { name: 'Nossas Lojas', href: '/contato' },
-    { name: 'Trabalhe Conosco', href: '/contato' },
-  ],
-  ajuda: [
-    { name: 'Fale Conosco', href: '/contato' },
-    { name: 'Trocas e Devoluções', href: '/contato' },
-    { name: 'Formas de Pagamento', href: '/contato' },
-    { name: 'Prazo de Entrega', href: '/contato' },
-  ],
-  categorias: [
-    { name: 'Anéis', href: '/categoria/aneis' },
-    { name: 'Brincos', href: '/categoria/brincos' },
-    { name: 'Colares', href: '/categoria/colares' },
-    { name: 'Pulseiras', href: '/categoria/pulseiras' },
-    { name: 'Alianças', href: '/categoria/aliancas' },
-    { name: 'Óculos', href: '/categoria/oculos' },
-  ],
-}
+import Link from 'next/link'
+import { Instagram, Facebook, MessageCircle, ChevronDown, ArrowUp } from 'lucide-react'
+import { useState } from 'react'
+
+const sections = [
+  {
+    title: 'Nossas Joias',
+    links: [
+      { name: 'Anéis', href: '/categoria/aneis' },
+      { name: 'Brincos', href: '/categoria/brincos' },
+      { name: 'Colares', href: '/categoria/colares' },
+      { name: 'Pulseiras', href: '/categoria/pulseiras' },
+      { name: 'Alianças', href: '/categoria/aliancas' },
+      { name: 'Óculos', href: '/categoria/oculos' },
+      { name: 'Joias', href: '/produtos' },
+    ],
+  },
+  {
+    title: 'Nossa Empresa',
+    links: [
+      { name: 'Sobre a Gold Sky', href: '/sobre' },
+      { name: 'Trabalhe Conosco', href: '/contato' },
+      { name: 'Sustentabilidade', href: '/sobre' },
+    ],
+  },
+  {
+    title: 'Atendimento',
+    links: [
+      { name: 'Central de Atendimento', href: '/contato' },
+      { name: 'WhatsApp', href: '/contato' },
+      { name: 'Acompanhe seu Pedido', href: '/contato' },
+      { name: 'Horário de Atendimento', href: '/contato' },
+      { name: 'Trocas e Devoluções', href: '/contato' },
+    ],
+  },
+  {
+    title: 'Informações',
+    links: [
+      { name: 'Política de Privacidade', href: '/privacidade' },
+      { name: 'Formas de Pagamento', href: '/contato' },
+      { name: 'Política de Trocas', href: '/contato' },
+      { name: 'Prazo de Entrega', href: '/contato' },
+    ],
+  },
+]
+
+const socialLinks = [
+  { label: 'Instagram', href: 'https://instagram.com', Icon: Instagram },
+  { label: 'Facebook', href: 'https://facebook.com', Icon: Facebook },
+  { label: 'WhatsApp', href: 'https://whatsapp.com', Icon: MessageCircle },
+]
 
 export function Footer() {
+  const [openSection, setOpenSection] = useState<string | null>(null)
+
+  const toggle = (title: string) =>
+    setOpenSection((prev) => (prev === title ? null : title))
+
+  const scrollToTop = () => window.scrollTo({ top: 0, behavior: 'smooth' })
+
   return (
-    <footer className="bg-forest-800 text-cream-100">
-      {/* Main Footer */}
-      <div className="container mx-auto px-4 py-12 lg:py-16">
-        <div className="grid gap-10 lg:grid-cols-4 lg:gap-8">
-          {/* Brand Column */}
-          <div className="lg:col-span-1">
-            <Link href="/" className="flex items-center gap-3">
-              <div className="flex h-12 w-12 items-center justify-center rounded-full bg-cream-50">
-                <span className="font-serif text-2xl font-bold text-forest-800">
-                  g
-                </span>
-              </div>
-              <div className="flex flex-col">
-                <span className="font-serif text-xl font-semibold tracking-wide text-cream-50">
-                  Gold Sky
-                </span>
-                <span className="text-xs text-cream-300">Ótica e Joalheria</span>
-              </div>
-            </Link>
-            <p className="mt-4 text-sm leading-relaxed text-cream-300">
-              Gold Sky — Ótica e Joalheria. Sua beleza, nossa missão.
+    <footer className="border-t border-gray-100 bg-white text-charcoal">
+      <div className="container mx-auto px-6 py-10 lg:py-14">
+
+        {/* Mobile: back to top */}
+        <button
+          onClick={scrollToTop}
+          className="mb-6 flex w-full items-center justify-center gap-2 border-b border-gray-200 pb-5 text-xs font-bold tracking-[0.15em] uppercase text-charcoal transition-colors hover:text-gold lg:hidden"
+        >
+          <ArrowUp className="h-3 w-3" />
+          Voltar ao Topo
+        </button>
+
+        <div className="flex flex-col lg:grid lg:grid-cols-5 lg:gap-10">
+
+          {/* Newsletter — first on mobile, last column on desktop */}
+          <div className="mb-8 lg:order-last lg:col-span-1 lg:mb-0">
+            <p className="text-xs font-bold uppercase tracking-[0.15em] text-charcoal">
+              Acompanhe Nossas Novidades
+            </p>
+            <p className="mt-1 text-xs text-warm-gray">
+              Cadastre seu e-mail para receber informações exclusivas
             </p>
 
-            {/* Social Links */}
-            <div className="mt-6 flex items-center gap-4">
-              <a
-                href="https://instagram.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex h-10 w-10 items-center justify-center rounded-full bg-forest-700 text-cream-200 transition-colors hover:bg-gold-500 hover:text-charcoal"
-                aria-label="Instagram"
-              >
-                <Instagram className="h-5 w-5" />
-              </a>
-              <a
-                href="https://facebook.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex h-10 w-10 items-center justify-center rounded-full bg-forest-700 text-cream-200 transition-colors hover:bg-gold-500 hover:text-charcoal"
-                aria-label="Facebook"
-              >
-                <Facebook className="h-5 w-5" />
-              </a>
+            <div className="mt-4 flex items-stretch border-b border-charcoal">
+              <input
+                type="email"
+                placeholder="E-MAIL"
+                className="flex-1 bg-transparent py-2 text-xs uppercase tracking-widest text-charcoal placeholder:text-warm-gray outline-none"
+              />
+              <button className="bg-charcoal px-4 py-2 text-xs font-bold uppercase tracking-widest text-white transition-colors hover:bg-forest-800">
+                Cadastrar
+              </button>
             </div>
+
+            <p className="mt-3 text-[11px] leading-relaxed text-warm-gray">
+              Ao cadastrar, aceito receber comunicações de marketing da Gold Sky.
+            </p>
           </div>
 
-          {/* Links Columns */}
-          <div className="grid grid-cols-2 gap-8 sm:grid-cols-3 lg:col-span-3">
-            {/* Institucional */}
-            <div>
-              <h3 className="font-serif text-lg font-semibold text-cream-50">
-                Institucional
-              </h3>
-              <ul className="mt-4 space-y-3">
-                {footerLinks.institucional.map((link) => (
-                  <li key={link.name}>
-                    <Link
-                      href={link.href}
-                      className="text-sm text-cream-300 transition-colors hover:text-gold-400"
-                    >
-                      {link.name}
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-            </div>
+          {/* Link sections — accordion on mobile, 4 columns on desktop */}
+          <div className="lg:order-first lg:col-span-4 lg:grid lg:grid-cols-4 lg:gap-8">
+            {sections.map((section) => (
+              <div key={section.title} className="border-b border-gray-100 lg:border-none">
 
-            {/* Ajuda */}
-            <div>
-              <h3 className="font-serif text-lg font-semibold text-cream-50">
-                Ajuda
-              </h3>
-              <ul className="mt-4 space-y-3">
-                {footerLinks.ajuda.map((link) => (
-                  <li key={link.name}>
-                    <Link
-                      href={link.href}
-                      className="text-sm text-cream-300 transition-colors hover:text-gold-400"
-                    >
-                      {link.name}
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-            </div>
+                {/* Mobile: accordion toggle */}
+                <button
+                  className="flex w-full items-center justify-between py-4 font-serif text-base font-semibold text-charcoal lg:hidden"
+                  onClick={() => toggle(section.title)}
+                >
+                  {section.title}
+                  <ChevronDown
+                    className={`h-4 w-4 text-gold transition-transform duration-200 ${
+                      openSection === section.title ? 'rotate-180' : ''
+                    }`}
+                  />
+                </button>
 
-            {/* Categorias */}
-            <div>
-              <h3 className="font-serif text-lg font-semibold text-cream-50">
-                Categorias
-              </h3>
-              <ul className="mt-4 space-y-3">
-                {footerLinks.categorias.map((link) => (
-                  <li key={link.name}>
-                    <Link
-                      href={link.href}
-                      className="text-sm text-cream-300 transition-colors hover:text-gold-400"
-                    >
-                      {link.name}
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-            </div>
+                {/* Desktop: heading always visible */}
+                <h3 className="mb-4 hidden font-serif text-base font-semibold text-charcoal lg:block">
+                  {section.title}
+                </h3>
+
+                {/* Links */}
+                <ul
+                  className={`flex flex-col gap-3 overflow-hidden transition-all duration-300 lg:flex lg:max-h-none ${
+                    openSection === section.title ? 'max-h-96 pb-4' : 'max-h-0'
+                  }`}
+                >
+                  {section.links.map((link) => (
+                    <li key={link.name}>
+                      <Link
+                        href={link.href}
+                        className="text-sm text-warm-gray transition-colors hover:text-charcoal"
+                      >
+                        {link.name}
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))}
           </div>
         </div>
 
-        {/* Contact Info */}
-        <div className="mt-12 border-t border-forest-700 pt-8">
-          <div className="flex flex-wrap items-center justify-center gap-6 text-sm text-cream-300 lg:justify-start">
-            <a
-              href="https://maps.google.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center gap-2 transition-colors hover:text-gold-400"
-            >
-              <MapPin className="h-4 w-4" />
-              <span>Rua das Joias, 123 - Centro, São Paulo - SP</span>
-            </a>
-            <a
-              href="tel:+551199999999"
-              className="flex items-center gap-2 transition-colors hover:text-gold-400"
-            >
-              <Phone className="h-4 w-4" />
-              <span>(11) 9999-9999</span>
-            </a>
-            <a
-              href="mailto:contato@goldsky.com.br"
-              className="flex items-center gap-2 transition-colors hover:text-gold-400"
-            >
-              <Mail className="h-4 w-4" />
-              <span>contato@goldsky.com.br</span>
-            </a>
+        {/* Social links */}
+        <div className="mt-10 border-t border-gray-100 pt-8">
+          <p className="mb-4 text-xs font-semibold text-charcoal">Redes Sociais</p>
+          <div className="flex items-center gap-3">
+            {socialLinks.map(({ label, href, Icon }) => (
+              <a
+                key={label}
+                href={href}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={label}
+                className="flex h-9 w-9 items-center justify-center rounded-full bg-gold text-white transition-opacity hover:opacity-80"
+              >
+                <Icon className="h-4 w-4" />
+              </a>
+            ))}
           </div>
         </div>
       </div>
 
-      {/* Bottom Bar */}
-      <div className="border-t border-forest-700 bg-forest-900">
-        <div className="container mx-auto px-4 py-4">
-          <div className="flex flex-col items-center justify-between gap-4 text-center text-xs text-cream-400 sm:flex-row sm:text-left">
-            <p>
-              &copy; {new Date().getFullYear()} Gold Sky — Ótica e Joalheria.
-              Todos os direitos reservados.
-            </p>
-            <div className="flex items-center gap-4">
-              <Link href="/privacidade" className="hover:text-gold-400">
-                Política de Privacidade
-              </Link>
-              <Link href="/termos" className="hover:text-gold-400">
-                Termos de Uso
-              </Link>
-            </div>
+      {/* Bottom bar */}
+      <div className="border-t border-gray-200 bg-[#faf5ee]">
+        <div className="container mx-auto flex flex-col items-center gap-2 px-6 py-6 text-center">
+          <Link
+            href="/"
+            className="font-serif text-xl font-bold uppercase tracking-[0.2em] text-forest-800"
+          >
+            Gold Sky
+          </Link>
+          <p className="text-xs text-warm-gray">
+            &copy; {new Date().getFullYear()} Gold Sky — Ótica e Joalheria. Todos os direitos reservados.
+          </p>
+          <div className="mt-1 flex items-center gap-4 text-xs text-warm-gray">
+            <Link href="/privacidade" className="transition-colors hover:text-charcoal">
+              Política de Privacidade
+            </Link>
+            <span>·</span>
+            <Link href="/termos" className="transition-colors hover:text-charcoal">
+              Termos de Uso
+            </Link>
           </div>
         </div>
       </div>

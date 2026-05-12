@@ -22,7 +22,7 @@ export function AboutSection() {
 
           {/* Content Side */}
           <div>
-            <span className="text-sm font-bold uppercase tracking-wider text-gold-300 text-white">
+            <span className="text-sm font-bold uppercase tracking-wider text-white">
               Nossa História
             </span>
             <h2 className="mt-4 font-serif text-3xl font-bold text-white lg:text-4xl">
@@ -60,7 +60,7 @@ export function AboutSection() {
             <div className="mt-8">
               <Button
                 asChild
-                className="bg-cream-50 font-bold text-forest-900 hover:bg-cream-200 text-white"
+                className="bg-cream-50 font-bold text-forest-900 hover:bg-cream-200"
               >
                 <Link href="/sobre">Conheça Nossa História</Link>
               </Button>

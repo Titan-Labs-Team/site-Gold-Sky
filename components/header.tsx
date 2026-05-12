@@ -1,7 +1,7 @@
 'use client'
 
 import Link from 'next/link'
-import { Search, Heart, ShoppingBag, Menu, X, User } from 'lucide-react'
+import { Search, Heart, ShoppingBag, Menu, ChevronRight, User } from 'lucide-react'
 import { useState, useEffect } from 'react'
 import { Button } from '@/components/ui/button'
 import { Sheet, SheetContent, SheetTrigger, SheetTitle } from '@/components/ui/sheet'
@@ -17,6 +17,13 @@ const categories = [
   { name: 'Alianças', href: '/categoria/aliancas' },
   { name: 'Óculos', href: '/categoria/oculos' },
   { name: 'Joias', href: '/produtos' },
+]
+
+const secondaryLinks = [
+  { name: 'Minha Conta', href: '/conta' },
+  { name: 'Sobre a Gold Sky', href: '/sobre' },
+  { name: 'Atendimento e Serviços', href: '/contato' },
+  { name: 'Encontre uma loja', href: '/contato' },
 ]
 
 export function Header() {
@@ -61,64 +68,79 @@ export function Header() {
                     <Menu className="h-6 w-6" />
                   </Button>
                 </SheetTrigger>
-                <SheetContent side="left" className="w-80 bg-cream-50 p-0">
+                <SheetContent side="left" className="flex w-[85vw] max-w-sm flex-col bg-white p-0">
                   <SheetTitle className="sr-only">Menu de navegação</SheetTitle>
-                  <div className="flex flex-col">
-                    <div className="border-b border-cream-300 p-6">
-                      <Link
-                        href="/"
-                        className="font-serif text-2xl font-semibold text-forest-800"
-                        onClick={() => setIsMobileMenuOpen(false)}
-                      >
-                        Gold Sky
-                      </Link>
+
+                  {/* Logo */}
+                  <div className="flex items-center justify-center border-b border-gray-100 py-5">
+                    <Link
+                      href="/"
+                      className="font-serif text-2xl font-bold tracking-[0.2em] text-forest-800 uppercase"
+                      onClick={() => setIsMobileMenuOpen(false)}
+                    >
+                      Gold Sky
+                    </Link>
+                  </div>
+
+                  {/* Login */}
+                  <div className="border-b border-gray-100 px-6 py-4">
+                    <Link
+                      href="/conta"
+                      className="flex items-center gap-3 text-charcoal transition-colors hover:text-gold"
+                      onClick={() => setIsMobileMenuOpen(false)}
+                    >
+                      <User className="h-5 w-5 text-warm-gray" />
+                      <span className="text-sm font-medium">Olá! Entre ou Cadastre-se</span>
+                    </Link>
+                  </div>
+
+                  {/* Search */}
+                  <div className="border-b border-gray-200 px-6 py-4">
+                    <div className="flex items-center gap-2 rounded bg-gray-100 px-3 py-2">
+                      <Search className="h-4 w-4 text-warm-gray" />
+                      <input
+                        type="text"
+                        placeholder="Buscar por nome ou código"
+                        className="flex-1 bg-transparent text-sm text-charcoal placeholder:text-warm-gray outline-none"
+                      />
                     </div>
-                    <nav className="flex flex-col p-6">
-                      {categories.map((category) => (
-                        <Link
-                          key={category.name}
-                          href={category.href}
-                          className="border-b border-cream-200 py-4 text-lg text-charcoal transition-colors hover:text-gold-500"
-                          onClick={() => setIsMobileMenuOpen(false)}
-                        >
-                          {category.name}
-                        </Link>
-                      ))}
+                  </div>
+
+                  {/* Main Categories */}
+                  <nav className="flex flex-1 flex-col overflow-y-auto">
+                    {categories.map((category) => (
                       <Link
-                        href="/sobre"
-                        className="border-b border-cream-200 py-4 text-lg text-charcoal transition-colors hover:text-gold-500"
+                        key={category.name}
+                        href={category.href}
+                        className="flex items-center justify-between border-b border-gray-100 px-6 py-4 text-sm font-bold tracking-[0.15em] uppercase text-charcoal transition-colors hover:text-gold"
                         onClick={() => setIsMobileMenuOpen(false)}
                       >
-                        Sobre
+                        {category.name}
+                        <ChevronRight className="h-4 w-4 text-gold" />
                       </Link>
+                    ))}
+                  </nav>
+
+                  {/* Secondary Links */}
+                  <div className="flex flex-col gap-4 border-t border-gray-200 px-6 py-6">
+                    {secondaryLinks.map((link) => (
                       <Link
-                        href="/contato"
-                        className="py-4 text-lg text-charcoal transition-colors hover:text-gold-500"
+                        key={link.name}
+                        href={link.href}
+                        className="font-serif text-sm text-charcoal transition-colors hover:text-gold"
                         onClick={() => setIsMobileMenuOpen(false)}
                       >
-                        Contato
+                        {link.name}
                       </Link>
-                    </nav>
+                    ))}
                   </div>
                 </SheetContent>
               </Sheet>
             </div>
 
             {/* Logo */}
-            <Link href="/" className="flex items-center gap-3">
-              <div className="flex h-10 w-10 items-center justify-center rounded-full bg-forest-800 lg:h-12 lg:w-12">
-                <span className="font-serif text-xl font-bold text-cream-50 lg:text-2xl">
-                  g
-                </span>
-              </div>
-              <div className="hidden flex-col sm:flex">
-                <span className="font-serif text-xl font-semibold tracking-wide text-forest-800 lg:text-2xl">
-                  Gold Sky
-                </span>
-                <span className="text-xs text-warm-gray lg:text-sm">
-                  Ótica e Joalheria
-                </span>
-              </div>
+            <Link href="/" className="font-serif text-xl font-bold tracking-[0.2em] text-forest-800 uppercase lg:text-2xl">
+              Gold Sky
             </Link>
 
             {/* Desktop Navigation */}

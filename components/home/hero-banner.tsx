@@ -53,7 +53,7 @@ export function HeroBanner() {
             <Button
               asChild
               size="lg"
-              className="bg-[#2B4A2F] px-8 text-white hover:bg-forest-900"
+              className="bg-forest-800 px-8 text-white hover:bg-forest-900"
             >
               <Link href="/sobre">Nossa História</Link>
             </Button>

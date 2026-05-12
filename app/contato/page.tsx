@@ -1,7 +1,6 @@
 'use client'
 
 import { useState } from 'react'
-import type { Metadata } from 'next'
 import { MapPin, Phone, Mail, Clock, MessageCircle, Send } from 'lucide-react'
 import { Header } from '@/components/header'
 import { Footer } from '@/components/footer'
