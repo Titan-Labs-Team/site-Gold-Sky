@@ -22,10 +22,8 @@ export function HeroBanner() {
         priority
       />
 
-      {/* Overlay mobile: cima-baixo para legibilidade no centro */}
-      <div className="absolute inset-0 bg-gradient-to-b from-forest-900/70 via-forest-900/50 to-forest-900/70 md:hidden" />
-      {/* Overlay desktop: esquerda-direita */}
-      <div className="absolute inset-0 hidden bg-gradient-to-r from-forest-900/80 via-forest-900/50 to-forest-900/10 md:block" />
+      {/* Overlay: topo escuro → base transparente */}
+      <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-black/70 to-transparent" />
 
       <div className="relative z-10 container mx-auto px-4">
         <div className="flex min-h-[100svh] flex-col justify-start pt-10 pb-16 md:min-h-[500px] md:justify-center md:py-16 lg:min-h-[600px] lg:max-w-xl lg:py-24">
@@ -46,14 +44,14 @@ export function HeroBanner() {
             <Button
               asChild
               size="lg"
-              className="bg-black px-8 text-white hover:bg-gray-900"
+              className="border-0 bg-transparent px-8 text-white shadow-none hover:bg-white/10"
             >
               <Link href="/produtos">Ver Presentes</Link>
             </Button>
             <Button
               asChild
               size="lg"
-              className="bg-black px-8 text-white hover:bg-gray-900"
+              className="bg-forest-800 px-8 text-white hover:bg-forest-900"
             >
               <Link href="/sobre">Nossa História</Link>
             </Button>
