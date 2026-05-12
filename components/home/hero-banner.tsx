@@ -4,13 +4,13 @@ import { Button } from '@/components/ui/button'
 
 export function HeroBanner() {
   return (
-    <section className="relative overflow-hidden">
+    <section className="relative h-[68vh] overflow-hidden md:h-auto">
       {/* Mobile: retrato 9:16 */}
       <Image
         src="/images/banner2.jpeg"
         alt="Gold Sky — banner principal"
         fill
-        className="object-cover object-center md:hidden"
+        className="object-cover object-[50%_65%] md:hidden"
         priority
       />
       {/* Desktop: paisagem */}
@@ -26,21 +26,24 @@ export function HeroBanner() {
       <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-black/70 to-transparent" />
 
       <div className="relative z-10 container mx-auto px-4">
-        <div className="flex min-h-[100svh] flex-col justify-start pt-10 pb-16 md:min-h-[500px] md:justify-center md:py-16 lg:min-h-[600px] lg:max-w-xl lg:py-24">
-          <span className="mb-4 inline-block w-fit rounded-full bg-gold-400/20 px-4 py-1.5 text-sm font-medium text-white">
-            Dia das Mães
-          </span>
+        <div className="flex h-[68vh] flex-col justify-between py-8 pb-12 md:h-auto md:min-h-[500px] md:justify-center md:py-16 lg:min-h-[600px] lg:max-w-xl lg:py-24">
+          {/* Bloco de texto — fica colado ao topo */}
+          <div>
+            <span className="mb-4 inline-block w-fit rounded-full bg-gold-400/20 px-4 py-1.5 text-sm font-medium text-white">
+              Dia das Mães
+            </span>
 
-          <h1 className="font-serif text-4xl font-bold leading-tight text-white sm:text-5xl lg:text-6xl">
-            <span className="text-balance">Traduza seu amor em joias</span>
-          </h1>
+            <h1 className="font-serif text-4xl font-bold leading-tight text-white sm:text-5xl lg:text-6xl">
+              <span className="text-balance">Traduza seu amor em joias</span>
+            </h1>
 
-          <p className="mt-6 max-w-lg text-lg text-white/85 lg:text-xl">
-            Presenteie quem você ama com peças exclusivas que guardam para sempre
-            os momentos mais especiais.
-          </p>
+            <p className="mt-6 max-w-lg text-lg text-white/85 lg:text-xl">
+              Presenteie quem você ama com peças exclusivas que guardam para sempre
+              os momentos mais especiais.
+            </p>
+          </div>
 
-          <div className="mt-auto flex flex-col gap-4 pb-0 pt-8 sm:flex-row md:mt-8 md:pb-0 md:pt-0">
+          <div className="flex flex-col gap-4 sm:flex-row md:mt-8">
             <Button
               asChild
               size="lg"
