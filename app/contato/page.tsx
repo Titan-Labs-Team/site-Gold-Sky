@@ -90,7 +90,7 @@ export default function ContactPage() {
 
           <div className="mx-auto max-w-6xl">
             <div className="text-center">
-              <h1 className="font-serif text-3xl font-bold text-forest-900 lg:text-4xl">
+              <h1 className="font-serif text-3xl font-bold text-charcoal lg:text-4xl">
                 Fale Conosco
               </h1>
               <p className="mt-4 text-warm-gray">
@@ -106,7 +106,7 @@ export default function ContactPage() {
                   key={info.title}
                   className="rounded-lg bg-white p-6 text-center shadow-sm"
                 >
-                  <div className="mx-auto flex h-12 w-12 items-center justify-center rounded-full bg-cream-100 text-forest-700">
+                  <div className="mx-auto flex h-12 w-12 items-center justify-center rounded-full bg-cream-100 text-charcoal">
                     <info.icon className="h-6 w-6" />
                   </div>
                   <h3 className="mt-4 font-medium text-charcoal">{info.title}</h3>
@@ -143,7 +143,7 @@ export default function ContactPage() {
             <div className="mt-16 grid gap-12 lg:grid-cols-2">
               {/* Contact Form */}
               <div className="rounded-lg bg-white p-6 shadow-sm lg:p-8">
-                <h2 className="font-serif text-2xl font-semibold text-forest-900">
+                <h2 className="font-serif text-2xl font-semibold text-charcoal">
                   Envie uma Mensagem
                 </h2>
                 <p className="mt-2 text-sm text-warm-gray">
@@ -224,7 +224,7 @@ export default function ContactPage() {
                     type="submit"
                     size="lg"
                     disabled={isSubmitting}
-                    className="w-full bg-forest-800 text-cream-50 hover:bg-forest-900"
+                    className="w-full bg-black text-white hover:bg-gray-900"
                   >
                     {isSubmitting ? (
                       'Enviando...'

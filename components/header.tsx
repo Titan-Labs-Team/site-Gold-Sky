@@ -62,7 +62,7 @@ export function Header() {
                   <Button
                     variant="ghost"
                     size="icon"
-                    className="text-forest-800 hover:bg-cream-200"
+                    className="text-black hover:bg-gray-100"
                     aria-label="Abrir menu"
                   >
                     <Menu className="h-6 w-6" />
@@ -75,7 +75,7 @@ export function Header() {
                   <div className="flex items-center justify-center border-b border-gray-100 py-5">
                     <Link
                       href="/"
-                      className="font-serif text-2xl font-bold tracking-[0.2em] text-forest-800 uppercase"
+                      className="font-serif text-2xl font-bold tracking-[0.2em] text-black uppercase"
                       onClick={() => setIsMobileMenuOpen(false)}
                     >
                       Gold Sky
@@ -139,7 +139,7 @@ export function Header() {
             </div>
 
             {/* Logo */}
-            <Link href="/" className="font-serif text-xl font-bold tracking-[0.2em] text-forest-800 uppercase lg:text-2xl">
+            <Link href="/" className="font-serif text-xl font-bold tracking-[0.2em] text-black uppercase lg:text-2xl">
               Gold Sky
             </Link>
 
@@ -161,7 +161,7 @@ export function Header() {
               <Button
                 variant="ghost"
                 size="icon"
-                className="text-forest-800 hover:bg-cream-200"
+                className="text-black hover:bg-gray-100"
                 aria-label="Buscar"
               >
                 <Search className="h-5 w-5" />
@@ -171,7 +171,7 @@ export function Header() {
                 <Button
                   variant="ghost"
                   size="icon"
-                  className="relative text-forest-800 hover:bg-cream-200"
+                  className="relative text-black hover:bg-gray-100"
                   aria-label="Lista de desejos"
                 >
                   <Heart className="h-5 w-5" />
@@ -187,7 +187,7 @@ export function Header() {
                 <Button
                   variant="ghost"
                   size="icon"
-                  className="relative text-forest-800 hover:bg-cream-200"
+                  className="relative text-black hover:bg-gray-100"
                   aria-label="Carrinho de compras"
                 >
                   <ShoppingBag className="h-5 w-5" />

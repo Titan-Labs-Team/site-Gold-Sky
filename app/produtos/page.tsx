@@ -78,7 +78,7 @@ export default function ProductsPage() {
           />
 
           <div className="mb-8">
-            <h1 className="font-serif text-3xl font-bold text-forest-900 lg:text-4xl">
+            <h1 className="font-serif text-3xl font-bold text-charcoal lg:text-4xl">
               Todos os Produtos
             </h1>
             <p className="mt-2 text-warm-gray">

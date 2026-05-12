@@ -70,7 +70,7 @@ export function ProductCard({ product }: ProductCardProps) {
         {/* Desktop hover: single centered CTA */}
         <div className="absolute inset-0 hidden items-center justify-center opacity-0 transition-opacity duration-200 group-hover:opacity-100 md:flex">
           <Link href={`/produto/${product.slug}`}>
-            <Button className="bg-forest-800 px-6 text-cream-50 hover:bg-forest-900">
+            <Button className="bg-black px-6 text-white hover:bg-gray-900">
               Ver Produto
             </Button>
           </Link>
@@ -86,7 +86,7 @@ export function ProductCard({ product }: ProductCardProps) {
         </Link>
         <p className="mt-1 text-sm text-warm-gray">{product.material}</p>
         <div className="mt-2">
-          <p className="text-lg font-semibold text-forest-800">
+          <p className="text-lg font-semibold text-charcoal">
             {formatPrice(product.price)}
           </p>
           <p className="text-xs text-warm-gray">

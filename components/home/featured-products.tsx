@@ -12,7 +12,7 @@ export function FeaturedProducts() {
       <div className="container mx-auto px-4">
         <div className="flex flex-col items-center justify-between gap-4 sm:flex-row">
           <div>
-            <h2 className="font-serif text-3xl font-bold text-forest-900 lg:text-4xl">
+            <h2 className="font-serif text-3xl font-bold text-charcoal lg:text-4xl">
               Destaques
             </h2>
             <p className="mt-2 text-warm-gray">
@@ -22,7 +22,7 @@ export function FeaturedProducts() {
           <Button
             asChild
             variant="outline"
-            className="border-forest-800 text-forest-800 hover:bg-forest-800 hover:text-cream-50"
+            className="border-black text-black hover:bg-black hover:text-white"
           >
             <Link href="/produtos">
               Ver Todos

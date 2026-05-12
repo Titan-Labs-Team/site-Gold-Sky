@@ -49,7 +49,7 @@ export default function AboutPage() {
           <div className="container mx-auto px-4">
             <Breadcrumbs items={[{ label: 'Sobre Nós' }]} />
             <div className="mx-auto max-w-3xl text-center">
-              <h1 className="font-serif text-4xl font-bold text-forest-900 lg:text-5xl">
+              <h1 className="font-serif text-4xl font-bold text-charcoal lg:text-5xl">
                 A Gold Sky
               </h1>
               <p className="mt-6 text-lg leading-relaxed text-warm-gray">
@@ -83,7 +83,7 @@ export default function AboutPage() {
                 <span className="text-sm font-medium uppercase tracking-wider text-gold-600">
                   Nossa História
                 </span>
-                <h2 className="mt-4 font-serif text-3xl font-bold text-forest-900 lg:text-4xl">
+                <h2 className="mt-4 font-serif text-3xl font-bold text-charcoal lg:text-4xl">
                   Tradição e Modernidade
                 </h2>
                 <div className="mt-6 space-y-4 text-warm-gray">
@@ -112,7 +112,7 @@ export default function AboutPage() {
         <section className="bg-cream-50 py-16 lg:py-24">
           <div className="container mx-auto px-4">
             <div className="mx-auto max-w-2xl text-center">
-              <h2 className="font-serif text-3xl font-bold text-forest-900 lg:text-4xl">
+              <h2 className="font-serif text-3xl font-bold text-charcoal lg:text-4xl">
                 Nossos Valores
               </h2>
               <p className="mt-4 text-warm-gray">
@@ -126,10 +126,10 @@ export default function AboutPage() {
                   key={value.title}
                   className="rounded-lg bg-white p-6 text-center shadow-sm"
                 >
-                  <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-full bg-cream-100 text-forest-700">
+                  <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-full bg-cream-100 text-charcoal">
                     <value.icon className="h-7 w-7" />
                   </div>
-                  <h3 className="mt-4 font-serif text-xl font-semibold text-forest-900">
+                  <h3 className="mt-4 font-serif text-xl font-semibold text-charcoal">
                     {value.title}
                   </h3>
                   <p className="mt-2 text-sm text-warm-gray">{value.description}</p>
@@ -143,7 +143,7 @@ export default function AboutPage() {
         <section className="bg-white py-16 lg:py-24">
           <div className="container mx-auto px-4">
             <div className="mx-auto max-w-2xl text-center">
-              <h2 className="font-serif text-3xl font-bold text-forest-900 lg:text-4xl">
+              <h2 className="font-serif text-3xl font-bold text-charcoal lg:text-4xl">
                 Nossa Loja
               </h2>
               <p className="mt-4 text-warm-gray">
@@ -188,7 +188,7 @@ export default function AboutPage() {
                   href="https://wa.me/5511999999999"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center justify-center rounded-md border border-cream-400 px-8 py-3 font-medium text-cream-50 transition-colors hover:bg-cream-50 hover:text-forest-800"
+                  className="inline-flex items-center justify-center rounded-md border border-cream-400 px-8 py-3 font-medium text-cream-50 transition-colors hover:bg-cream-50 hover:text-charcoal"
                 >
                   WhatsApp
                 </a>

@@ -240,7 +240,7 @@ export function ProductFiltersSidebar({
   return (
     <aside className="hidden lg:block lg:w-64">
       <div className="sticky top-32 rounded-lg bg-white p-6 shadow-sm">
-        <h2 className="mb-6 font-serif text-lg font-semibold text-forest-900">
+        <h2 className="mb-6 font-serif text-lg font-semibold text-charcoal">
           Filtros
         </h2>
 

@@ -46,14 +46,14 @@ export function HeroBanner() {
             <Button
               asChild
               size="lg"
-              className="bg-forest-800 px-8 text-white hover:bg-forest-900"
+              className="bg-black px-8 text-white hover:bg-gray-900"
             >
               <Link href="/produtos">Ver Presentes</Link>
             </Button>
             <Button
               asChild
               size="lg"
-              className="bg-forest-800 px-8 text-white hover:bg-forest-900"
+              className="bg-black px-8 text-white hover:bg-gray-900"
             >
               <Link href="/sobre">Nossa História</Link>
             </Button>

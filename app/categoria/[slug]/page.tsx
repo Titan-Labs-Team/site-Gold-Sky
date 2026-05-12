@@ -86,7 +86,7 @@ export default function CategoryPage({ params }: CategoryPageProps) {
           />
 
           <div className="mb-8">
-            <h1 className="font-serif text-3xl font-bold text-forest-900 lg:text-4xl">
+            <h1 className="font-serif text-3xl font-bold text-charcoal lg:text-4xl">
               {category.name}
             </h1>
             <p className="mt-2 text-warm-gray">

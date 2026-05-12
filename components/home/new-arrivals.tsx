@@ -29,21 +29,21 @@ export function NewArrivals() {
             <span className="text-sm font-medium uppercase tracking-wider text-gold-600">
               Acabaram de chegar
             </span>
-            <h2 className="mt-2 font-serif text-3xl font-bold text-forest-900 lg:text-4xl">
+            <h2 className="mt-2 font-serif text-3xl font-bold text-charcoal lg:text-4xl">
               Novidades
             </h2>
           </div>
           <div className="flex items-center gap-2">
             <button
               onClick={() => scroll('left')}
-              className="flex h-10 w-10 items-center justify-center rounded-full border border-cream-300 text-forest-800 transition-colors hover:bg-forest-800 hover:text-cream-50"
+              className="flex h-10 w-10 items-center justify-center rounded-full border border-cream-300 text-black transition-colors hover:bg-black hover:text-white"
               aria-label="Rolar para esquerda"
             >
               <ChevronLeft className="h-5 w-5" />
             </button>
             <button
               onClick={() => scroll('right')}
-              className="flex h-10 w-10 items-center justify-center rounded-full border border-cream-300 text-forest-800 transition-colors hover:bg-forest-800 hover:text-cream-50"
+              className="flex h-10 w-10 items-center justify-center rounded-full border border-cream-300 text-black transition-colors hover:bg-black hover:text-white"
               aria-label="Rolar para direita"
             >
               <ChevronRight className="h-5 w-5" />
@@ -71,7 +71,7 @@ export function NewArrivals() {
           <Button
             asChild
             variant="outline"
-            className="border-forest-800 text-forest-800 hover:bg-forest-800 hover:text-cream-50"
+            className="border-black text-black hover:bg-black hover:text-white"
           >
             <Link href="/produtos">
               Ver Todas as Novidades

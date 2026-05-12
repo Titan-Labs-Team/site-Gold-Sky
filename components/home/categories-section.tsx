@@ -27,7 +27,7 @@ export function CategoriesSection() {
     <section className="bg-cream-50 py-16 lg:py-24">
       <div className="container mx-auto px-4">
         <div className="text-center">
-          <h2 className="font-serif text-3xl font-bold text-forest-900 lg:text-4xl">
+          <h2 className="font-serif text-3xl font-bold text-charcoal lg:text-4xl">
             Nossas Categorias
           </h2>
           <p className="mt-4 text-warm-gray">
@@ -39,14 +39,14 @@ export function CategoriesSection() {
           {/* Setas — visíveis apenas no desktop */}
           <button
             onClick={() => scroll('left')}
-            className="absolute -left-4 top-1/3 z-10 hidden h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full border border-cream-300 bg-white text-forest-800 shadow-sm transition-colors hover:bg-forest-800 hover:text-cream-50 lg:flex"
+            className="absolute -left-4 top-1/3 z-10 hidden h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full border border-cream-300 bg-white text-black shadow-sm transition-colors hover:bg-black hover:text-white lg:flex"
             aria-label="Anterior"
           >
             <ChevronLeft className="h-5 w-5" />
           </button>
           <button
             onClick={() => scroll('right')}
-            className="absolute -right-4 top-1/3 z-10 hidden h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full border border-cream-300 bg-white text-forest-800 shadow-sm transition-colors hover:bg-forest-800 hover:text-cream-50 lg:flex"
+            className="absolute -right-4 top-1/3 z-10 hidden h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full border border-cream-300 bg-white text-black shadow-sm transition-colors hover:bg-black hover:text-white lg:flex"
             aria-label="Próximo"
           >
             <ChevronRight className="h-5 w-5" />

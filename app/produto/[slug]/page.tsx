@@ -51,12 +51,16 @@ export default function ProductPage({ params }: ProductPageProps) {
   useEffect(() => {
     const btn = addToCartRef.current
     if (!btn) return
-    const observer = new IntersectionObserver(
-      ([entry]) => setShowStickyBar(!entry.isIntersecting),
-      { threshold: 0 }
-    )
-    observer.observe(btn)
-    return () => observer.disconnect()
+
+    const onScroll = () => {
+      const rect = btn.getBoundingClientRect()
+      // mostra apenas quando o botão saiu completamente pelo topo do viewport
+      setShowStickyBar(rect.bottom < 0)
+    }
+
+    window.addEventListener('scroll', onScroll, { passive: true })
+    onScroll()
+    return () => window.removeEventListener('scroll', onScroll)
   }, [])
 
   const handleAddToCart = () => {
@@ -112,15 +116,15 @@ export default function ProductPage({ params }: ProductPageProps) {
       content: (
         <div className="space-y-3 text-sm text-warm-gray">
           <div className="flex items-center gap-3">
-            <Truck className="h-5 w-5 flex-shrink-0 text-forest-700" />
+            <Truck className="h-5 w-5 flex-shrink-0 text-charcoal" />
             <span>Frete grátis acima de R$ 299</span>
           </div>
           <div className="flex items-center gap-3">
-            <Shield className="h-5 w-5 flex-shrink-0 text-forest-700" />
+            <Shield className="h-5 w-5 flex-shrink-0 text-charcoal" />
             <span>Garantia de 1 ano</span>
           </div>
           <div className="flex items-center gap-3">
-            <RotateCcw className="h-5 w-5 flex-shrink-0 text-forest-700" />
+            <RotateCcw className="h-5 w-5 flex-shrink-0 text-charcoal" />
             <span>Troca em até 30 dias</span>
           </div>
         </div>
@@ -230,11 +234,11 @@ export default function ProductPage({ params }: ProductPageProps) {
                   className={cn(
                     'flex w-full items-center justify-center border py-4 text-sm font-bold uppercase tracking-[0.15em] transition-colors',
                     isWishlisted
-                      ? 'border-forest-800 bg-forest-800/10 text-forest-800'
-                      : 'border-forest-800 text-forest-800 hover:bg-forest-800 hover:text-white'
+                      ? 'border-black bg-black/10 text-black'
+                      : 'border-black text-black hover:bg-black hover:text-white'
                   )}
                 >
-                  <Heart className={cn('mr-2 h-4 w-4', isWishlisted && 'fill-forest-800')} />
+                  <Heart className={cn('mr-2 h-4 w-4', isWishlisted && 'fill-black')} />
                   {isWishlisted ? 'Na Lista de Desejos' : 'Lista de Desejos'}
                 </button>
               </div>
@@ -250,7 +254,7 @@ export default function ProductPage({ params }: ProductPageProps) {
                       <span
                         className={cn(
                           'text-xs font-bold uppercase tracking-[0.15em] transition-colors',
-                          openSection === section.id ? 'text-forest-800' : 'text-charcoal'
+                          openSection === section.id ? 'text-charcoal' : 'text-charcoal'
                         )}
                       >
                         {section.label}
@@ -286,29 +290,48 @@ export default function ProductPage({ params }: ProductPageProps) {
         </div>
       </main>
 
-      {/* Sticky bottom bar — só aparece quando o botão principal saiu do viewport */}
+      {/* Sticky bottom bar */}
       {showStickyBar && (
-        <div className="fixed bottom-0 left-0 right-0 z-40 bg-white shadow-[0_-2px_8px_rgba(0,0,0,0.12)] lg:hidden">
-          <div className="flex items-center justify-between border-b border-gray-100 px-4 py-2">
-            <p className="max-w-[60%] truncate text-xs font-medium text-charcoal">
+        <div className="fixed bottom-0 left-0 right-0 z-40 border-t border-gray-200 bg-white shadow-[0_-2px_12px_rgba(0,0,0,0.08)]">
+
+          {/* Desktop: tudo em uma linha */}
+          <div className="hidden items-center justify-between gap-8 px-8 py-3 md:flex">
+            <p className="line-clamp-2 max-w-sm text-xs font-semibold uppercase tracking-[0.12em] text-charcoal">
               {product.name}
             </p>
-            <p className="text-sm font-bold text-charcoal">
+            <p className="shrink-0 text-lg font-bold text-charcoal">
               {formatPrice(product.price)}
             </p>
+            <button
+              onClick={handleAddToCart}
+              disabled={!product.inStock}
+              className="shrink-0 bg-black px-10 py-3.5 text-xs font-bold uppercase tracking-[0.15em] text-white transition-colors hover:bg-gray-900 disabled:cursor-not-allowed disabled:bg-gray-300"
+            >
+              Adicionar à Sacola
+            </button>
           </div>
-          <button
-            onClick={handleAddToCart}
-            disabled={!product.inStock}
-            className="w-full bg-forest-800 py-4 text-sm font-bold uppercase tracking-[0.15em] text-white transition-colors hover:bg-forest-900 disabled:cursor-not-allowed disabled:bg-gray-300"
-          >
-            Adicionar à Sacola
-          </button>
+
+          {/* Mobile: nome empilhado, preço, botão verde */}
+          <div className="md:hidden px-4 pb-4 pt-3">
+            <p className="line-clamp-2 text-xs font-semibold uppercase leading-tight tracking-[0.12em] text-charcoal">
+              {product.name}
+            </p>
+            <p className="mt-1 text-base font-bold text-charcoal">
+              {formatPrice(product.price)}
+            </p>
+            <button
+              onClick={handleAddToCart}
+              disabled={!product.inStock}
+              className="mt-3 w-full bg-forest-800 py-4 text-xs font-bold uppercase tracking-[0.15em] text-white transition-colors hover:bg-forest-900 disabled:cursor-not-allowed disabled:bg-gray-300"
+            >
+              Adicionar à Sacola
+            </button>
+          </div>
         </div>
       )}
 
       <Footer />
-      <WhatsAppButton />
+      <WhatsAppButton stickyBarVisible={showStickyBar} />
     </div>
   )
 }

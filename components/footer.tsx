@@ -90,7 +90,7 @@ export function Footer() {
                 placeholder="E-MAIL"
                 className="flex-1 bg-transparent py-2 text-xs uppercase tracking-widest text-charcoal placeholder:text-warm-gray outline-none"
               />
-              <button className="bg-charcoal px-4 py-2 text-xs font-bold uppercase tracking-widest text-white transition-colors hover:bg-forest-800">
+              <button className="bg-charcoal px-4 py-2 text-xs font-bold uppercase tracking-widest text-white transition-colors hover:bg-gray-900">
                 Cadastrar
               </button>
             </div>
@@ -170,7 +170,7 @@ export function Footer() {
         <div className="container mx-auto flex flex-col items-center gap-2 px-6 py-6 text-center">
           <Link
             href="/"
-            className="font-serif text-xl font-bold uppercase tracking-[0.2em] text-forest-800"
+            className="font-serif text-xl font-bold uppercase tracking-[0.2em] text-black"
           >
             Gold Sky
           </Link>

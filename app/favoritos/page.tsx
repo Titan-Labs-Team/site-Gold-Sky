@@ -22,7 +22,7 @@ export default function FavoritesPage() {
 
           <div className="flex flex-col items-start justify-between gap-4 sm:flex-row sm:items-center">
             <div>
-              <h1 className="font-serif text-3xl font-bold text-forest-900 lg:text-4xl">
+              <h1 className="font-serif text-3xl font-bold text-charcoal lg:text-4xl">
                 Lista de Desejos
               </h1>
               <p className="mt-2 text-warm-gray">
@@ -51,14 +51,14 @@ export default function FavoritesPage() {
               <div className="flex h-24 w-24 items-center justify-center rounded-full bg-cream-200">
                 <Heart className="h-12 w-12 text-warm-gray" />
               </div>
-              <h2 className="mt-6 font-serif text-2xl font-semibold text-forest-900">
+              <h2 className="mt-6 font-serif text-2xl font-semibold text-charcoal">
                 Sua lista de desejos está vazia
               </h2>
               <p className="mt-2 text-warm-gray">
                 Salve seus produtos favoritos para encontrá-los facilmente depois.
               </p>
               <Link href="/produtos" className="mt-8">
-                <Button className="bg-forest-800 text-cream-50 hover:bg-forest-900">
+                <Button className="bg-black text-white hover:bg-gray-900">
                   Explorar Produtos
                   <ArrowRight className="ml-2 h-4 w-4" />
                 </Button>

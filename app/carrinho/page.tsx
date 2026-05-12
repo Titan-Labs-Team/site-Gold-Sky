@@ -33,7 +33,7 @@ export default function CartPage() {
         <div className="container mx-auto px-4 py-8 lg:py-12">
           <Breadcrumbs items={[{ label: 'Carrinho' }]} />
 
-          <h1 className="font-serif text-3xl font-bold text-forest-900 lg:text-4xl">
+          <h1 className="font-serif text-3xl font-bold text-charcoal lg:text-4xl">
             Meu Carrinho
           </h1>
 
@@ -113,7 +113,7 @@ export default function CartPage() {
 
                           {/* Price */}
                           <div className="text-right">
-                            <p className="font-semibold text-forest-800">
+                            <p className="font-semibold text-charcoal">
                               {formatPrice(item.product.price * item.quantity)}
                             </p>
                             {item.quantity > 1 && (
@@ -147,7 +147,7 @@ export default function CartPage() {
               {/* Order Summary */}
               <div className="lg:col-span-1">
                 <div className="sticky top-32 rounded-lg bg-white p-6 shadow-sm">
-                  <h2 className="font-serif text-xl font-semibold text-forest-900">
+                  <h2 className="font-serif text-xl font-semibold text-charcoal">
                     Resumo do Pedido
                   </h2>
 
@@ -172,7 +172,7 @@ export default function CartPage() {
                   <div className="mt-6 flex justify-between">
                     <span className="text-lg font-semibold text-charcoal">Total</span>
                     <div className="text-right">
-                      <p className="text-xl font-bold text-forest-800">
+                      <p className="text-xl font-bold text-charcoal">
                         {formatPrice(finalTotal)}
                       </p>
                       <p className="text-xs text-warm-gray">
@@ -183,7 +183,7 @@ export default function CartPage() {
 
                   <Button
                     size="lg"
-                    className="mt-6 w-full bg-forest-800 text-cream-50 hover:bg-forest-900"
+                    className="mt-6 w-full bg-black text-white hover:bg-gray-900"
                   >
                     Finalizar Compra
                     <ArrowRight className="ml-2 h-4 w-4" />
@@ -193,7 +193,7 @@ export default function CartPage() {
                     <Button
                       variant="outline"
                       size="lg"
-                      className="mt-3 w-full border-forest-800 text-forest-800 hover:bg-forest-800 hover:text-cream-50"
+                      className="mt-3 w-full border-black text-black hover:bg-black hover:text-white"
                     >
                       Continuar Comprando
                     </Button>
@@ -206,14 +206,14 @@ export default function CartPage() {
               <div className="flex h-24 w-24 items-center justify-center rounded-full bg-cream-200">
                 <ShoppingBag className="h-12 w-12 text-warm-gray" />
               </div>
-              <h2 className="mt-6 font-serif text-2xl font-semibold text-forest-900">
+              <h2 className="mt-6 font-serif text-2xl font-semibold text-charcoal">
                 Seu carrinho está vazio
               </h2>
               <p className="mt-2 text-warm-gray">
                 Explore nossos produtos e encontre algo especial para você.
               </p>
               <Link href="/produtos" className="mt-8">
-                <Button className="bg-forest-800 text-cream-50 hover:bg-forest-900">
+                <Button className="bg-black text-white hover:bg-gray-900">
                   Ver Produtos
                   <ArrowRight className="ml-2 h-4 w-4" />
                 </Button>

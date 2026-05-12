@@ -60,7 +60,7 @@ export function AboutSection() {
             <div className="mt-8">
               <Button
                 asChild
-                className="bg-cream-50 font-bold text-forest-900 hover:bg-cream-200"
+                className="bg-cream-50 font-bold text-charcoal hover:bg-cream-200"
               >
                 <Link href="/sobre">Conheça Nossa História</Link>
               </Button>
